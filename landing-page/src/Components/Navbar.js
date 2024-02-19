@@ -15,6 +15,12 @@ import InfoIcon from "@mui/icons-material/Info";
 import CommentRoundedIcon from "@mui/icons-material/CommentRounded";
 import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
+// import Home from "./Home"
+// import About from "./About";
+// import Work from "./Components/Work";
+// import Testimonial from "./Components/Testimonial";
+// import Contact from "./Components/Contact";
+// import Footer from "./Components/Footer";
 
 const Navbar = () => {
 
@@ -48,14 +54,13 @@ const Navbar = () => {
             <img src={Logo} alt="" />
           </div>
           <div className="navbar-links-container">
-            <a href="">Home</a>
-            <a href="">About</a>
-            <a href="">Testimonials</a>
-            <a href="">Contact</a>
-            <a href="">
+            <a href="Home.js#Home-id">Home</a>
+            <a href="About.js#About-id">About</a>
+            <a href="Contact.js#Contact-id">Contact</a>
+            <a href="Products.js#Product-id">
               <BsCart2 className="navbar-cart-icon" />
             </a>
-            <button className="primary-button">Bookings Now</button>
+            {/* <button className="primary-button">Bookings Now</button> */}
           </div>
           <div className="navbar-menu-container">
             <HiOutlineBars3 onClick={() => setOpenMenu(true)} />

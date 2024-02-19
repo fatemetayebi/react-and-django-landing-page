@@ -1,8 +1,7 @@
 import "./App.css";
 import Home from "./Components/Home"
 import About from "./Components/About";
-import Work from "./Components/Work";
-import Testimonial from "./Components/Testimonial";
+import Products from "./Components/Products";
 import Contact from "./Components/Contact";
 import Footer from "./Components/Footer";
 
@@ -11,8 +10,7 @@ function App() {
     <div className="App">
       <Home />
       <About />
-      <Work />
-      <Testimonial />
+      <Products />
       <Contact />
       <Footer />
     </div>

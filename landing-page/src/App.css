@@ -4,6 +4,7 @@
     box-sizing: border-box;
     font-family: "Reem Kufi", sans-serif !important;
   }
+  
   img {
     max-width: 100%;
     height: auto;
@@ -36,7 +37,7 @@
   .navbar-links-container a {
     margin-right: 3rem;
     text-decoration: none;
-    color: black;
+    color: #c8c6c6;
     font-size: 1.1rem;
     font-weight: 600;
   }
@@ -54,21 +55,25 @@
   .navbar-cart-icon {
     font-size: 1.15rem;
   }
+  .nav-logo-container {
+    max-width: 220px;
+  }
   .primary-button:hover {
     background-color: rgb(234, 234, 234);
   }
   .navbar-menu-container svg {
     font-size: 1.5rem;
     cursor: pointer;
+    color: #6e6d6d;
   }
   .home-banner-container {
     position: relative;
     display: flex;
-    padding-top: 3rem;
+    margin-top: 0.01rem;
   }
   .home-bannerImage-container {
     position: absolute;
-    top: -100px;
+    top: -50px;
     right: -170px;
     z-index: -2;
     max-width: 700px;
@@ -83,10 +88,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
+    align-items: center;
+
   }
   .primary-heading {
     font-size: clamp(2rem, 5vw, 4rem);
-    color: #4c4c4c;
+    color: #fbfafb;
+    text-align: center;
+    text-shadow: 0 0 20px #6800e6, 0 0 10px #fff, 0 0 15px #430137, 0 0 20px #430137, 0 0 25px #430137, 0 0 30px #430137, 0 0 35px #430137;
     /* line-height: 5rem; */
     max-width: 600px;
   }
@@ -95,10 +104,12 @@
     max-width: 500px;
     color: #6a6a6a;
     margin: 1.5rem 0rem;
+    text-align: center;
+
   }
   .secondary-button {
     padding: 1rem 2.5rem;
-    background-color: #fe9e0d;
+    background-color: #d106df;
     outline: none;
     border: none;
     border-radius: 5rem;
@@ -116,10 +127,10 @@
     font-size: 1.5rem;
   }
   .secondary-button:hover {
-    background-color: #e48f0f;
+    background-color: #930893;
   }
   .about-section-container {
-    margin-top: 20rem;
+    margin-top: 8rem;
     position: relative;
     display: flex;
     align-items: center;
@@ -141,14 +152,17 @@
     justify-content: center;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    text-align: center;
+    color: #808080;
+    
   }
   .primary-subheading {
     font-weight: 700;
-    color: #fe9e0d;
     font-size: 1.15rem;
   }
   .about-buttons-container {
-    margin-top: 2rem;
+    margin-top: 5rem;
     display: flex;
   }
   .watch-video-button {
@@ -184,7 +198,7 @@
     background-color: white;
     max-width: 700px;
     width: 100%;
-    margin-top: 3rem;
+    margin-top: 5rem;
     display: flex;
     align-items: center;
     padding: 1rem;
@@ -233,38 +247,8 @@
     color: #4c4c4c;
     cursor: pointer;
   }
-  .testimonial-section-bottom {
-    margin-top: 2rem;
-    background-color: white;
-    padding: 1.5rem 2rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    max-width: 750px;
-    border-radius: 2rem;
-    flex-direction: column;
-    text-align: center;
-  }
-  .testimonial-section-bottom {
-    margin: 2rem auto;
-  }
-  .testimonial-section-bottom p {
-    font-weight: 700;
-    color: #515151;
-    max-width: 500px;
-    font-size: 1.1rem;
-    margin: 2rem 0rem;
-  }
-  .testimonials-stars-container svg {
-    margin: 0rem 0.25rem;
-    font-size: 1.5rem;
-    color: #fe9e0d;
-  }
-  .testimonial-section-bottom h2 {
-    margin-top: 1.5rem;
-  }
   .work-section-wrapper {
-    margin-top: 15rem;
+    margin-top: 8rem;
   }
   .work-section-top p {
     text-align: center;
@@ -278,6 +262,7 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    color: #808080;
   }
   .work-section-info {
     width: 290px;
@@ -322,10 +307,9 @@
       max-width: 600px;
     }
   }
+  
   @media (max-width: 800px) {
-    .nav-logo-container {
-      max-width: 140px;
-    }
+    
     .navbar-links-container {
       display: none;
     }
@@ -350,7 +334,9 @@
       max-width: 400px;
     }
     .primary-heading {
+      color: #fbfafb;
       text-align: center;
+      text-shadow: 0 0 20px #6800e6, 0 0 10px #fff, 0 0 15px #430137, 0 0 20px #430137, 0 0 25px #430137, 0 0 30px #430137, 0 0 35px #430137;
       max-width: 90%;
     }
     .primary-text {
@@ -361,7 +347,7 @@
     .about-section-text-container {
       justify-content: center;
       align-items: center;
-      margin-top: 4rem;
+      margin-top: 5rem;
     }
     .secondary-button {
       font-size: 1rem;
@@ -369,7 +355,7 @@
       cursor: pointer;
     }
     .about-section-container {
-      margin-top: 5rem !important;
+      margin-top: 3rem !important;
     }
     .about-buttons-container {
       justify-content: center;
@@ -377,6 +363,7 @@
     }
     .primary-subheading {
       text-align: center;
+      color: rgb(247, 245, 245);
     }
     .watch-video-button {
       margin-left: 0rem !important;

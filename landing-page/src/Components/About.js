@@ -1,7 +1,7 @@
 import React from 'react';
-import AboutBackground from "../Assets/perpel-powder.png";
+import AboutBackground from "../Assets/perpel-powder2.png";
 // import AboutBackgroundImage from "../Assets/about-background-image.png";
-import { BsFillPlayCircleFill } from "react-icons/bs";
+// import { BsFillPlayCircleFill } from "react-icons/bs";
 
 
 const About = () => {
@@ -13,25 +13,18 @@ const About = () => {
         <div className="about-section-image-container">
           {/* <img src={AboutBackgroundImage} alt="" /> */}
         </div>
-        <div className="about-section-text-container">
-          <p className="primary-subheading">About</p>
-          <h1 className="primary-heading">
-            Food Is An Important Part Of A Balanced Diet
+        <div className="about-section-text-container" id="About-id">
+          <p className="primary-subheading" ></p>
+          <h1 className="primary-heading" >
+          Exploring the World of Electric Guitars
           </h1>
           <p className="primary-text">
-            Lorem ipsum dolor sit amet consectetur. Non tincidunt magna non et
-            elit. Dolor turpis molestie dui magnis facilisis at fringilla quam.
+          Electric guitars are available in music stores, online retailers, and second-hand markets. They come in various styles, colors, and brands to suit different preferences and budgets. Known for their versatility and ability to produce a wide range of sounds, electric guitars are popular among beginners and experienced musicians alike.
           </p>
           <p className="primary-text">
-            Non tincidunt magna non et elit. Dolor turpis molestie dui magnis
-            facilisis at fringilla quam.
+            
           </p>
-          <div className="about-buttons-container">
-            <button className="secondary-button">Learn More</button>
-            <button className="watch-video-button">
-              <BsFillPlayCircleFill /> Watch Video
-            </button>
-          </div>
+          
         </div>
       </div>
     );
