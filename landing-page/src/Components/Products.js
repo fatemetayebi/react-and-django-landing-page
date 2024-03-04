@@ -1,26 +1,20 @@
-import React from "react";
-import PickMeals from "../Assets/pick-meals-image.png";
-import ChooseMeals from "../Assets/choose-image.png";
-import DeliveryMeals from "../Assets/delivery-image.png";
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
 
-const Work = () => {
-  const workInfoData = [
-    {
-      image: PickMeals,
-      title: "Pick Meals",
-      text: "Lorem ipsum dolor sit amet consectetur. Maecenas orci et sagittis duis elementum interdum facilisi bibendum.",
-    },
-    {
-      image: ChooseMeals,
-      title: "Choose How Often",
-      text: "Lorem ipsum dolor sit amet consectetur. Maecenas orci et ",
-    },
-    {
-      image: DeliveryMeals,
-      title: "Fast Deliveries",
-      text: "Lorem ipsum dolor sit amet consectetur. Maecenas orci et lorem ipsum",
-    },
-  ];
+const Product = () => {
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    axios.get('http://127.0.0.1:8000/')
+      .then(response => {
+        console.log(response.data);
+        setProducts(response.data);
+      })
+      .catch(error => {
+        console.error(error);
+      });
+  }, []);
+
   return (
     <div className="work-section-wrapper">
       <div className="work-section-top">
@@ -32,13 +26,13 @@ const Work = () => {
         </p>
       </div>
       <div className="work-section-bottom">
-        {workInfoData.map((data) => (
-          <div className="work-section-info" key={data.title}>
+        {products.map((data) => (
+          <div className="work-section-info" key={data.intro}>
             <div className="info-boxes-img-container">
               <img src={data.image} alt="" />
             </div>
-            <h2>{data.title}</h2>
-            <p>{data.text}</p>
+            <p>{data.title}</p>
+            <p>{data.price}$</p>
           </div>
         ))}
       </div>
@@ -46,4 +40,4 @@ const Work = () => {
   );
 };
 
-export default Work;
+export default Product;

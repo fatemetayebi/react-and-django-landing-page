@@ -265,8 +265,8 @@
     color: #808080;
   }
   .work-section-info {
-    width: 290px;
-    min-height: 350px;
+    width: 250px;
+    height: 500px;
     background-color: white;
     padding: 1rem 2rem;
     display: flex;
@@ -277,6 +277,8 @@
     border-radius: 1rem;
     color: #505050;
     margin: 1rem 2rem;
+    object-fit: cover;
+
   }
   .work-section-info h2 {
     margin: 1rem 0rem;
