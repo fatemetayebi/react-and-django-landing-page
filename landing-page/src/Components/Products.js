@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import WheelPicker from 'react-simple-wheel-picker';
 
 const Product = () => {
   const [products, setProducts] = useState([]);
@@ -25,16 +26,18 @@ const Product = () => {
           elit. Dolor turpis molestie dui magnis facilisis at fringilla quam.
         </p>
       </div>
-      <div className="work-section-bottom">
-        {products.map((data) => (
-          <div className="work-section-info" key={data.intro}>
-            <div className="info-boxes-img-container">
-              <img src={data.image} alt="" />
+      <div className='work-section-products'>
+        <WheelPicker style={{ width: 200, height: 150 }}>
+          {products.map((data) => (
+            <div className="work-section-info" key={data.intro}>
+              <div className="product-boxes-img-container">
+                <img src={data.image} alt="" />
+              </div>
+              <p>{data.title}</p>
+              <p>{data.price}$</p>
             </div>
-            <p>{data.title}</p>
-            <p>{data.price}$</p>
-          </div>
-        ))}
+          ))}
+        </WheelPicker>
       </div>
     </div>
   );
