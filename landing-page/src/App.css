@@ -266,8 +266,13 @@
   }
   .work-section-info {
 <<<<<<< HEAD
+<<<<<<< HEAD
     min-width: 250px;
     min-height: 500px;
+=======
+    width: 290px;
+    min-height: 350px;
+>>>>>>> parent of e4a964a (140212141138)
 =======
     width: 290px;
     min-height: 350px;
@@ -283,7 +288,10 @@
     color: #505050;
     margin: 1rem 2rem;
 <<<<<<< HEAD
+<<<<<<< HEAD
     object-fit: cover;
+=======
+>>>>>>> parent of e4a964a (140212141138)
 =======
 >>>>>>> parent of e4a964a (140212141138)
   }

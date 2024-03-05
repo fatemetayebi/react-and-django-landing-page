@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import WheelPicker from 'react-simple-wheel-picker';
@@ -17,10 +18,15 @@ const Product = () => {
       });
   }, []);
 =======
+=======
+>>>>>>> parent of e4a964a (140212141138)
 import React from "react";
 import PickMeals from "../Assets/pick-meals-image.png";
 import ChooseMeals from "../Assets/choose-image.png";
 import DeliveryMeals from "../Assets/delivery-image.png";
+<<<<<<< HEAD
+>>>>>>> parent of e4a964a (140212141138)
+=======
 >>>>>>> parent of e4a964a (140212141138)
 
 const Work = () => {
