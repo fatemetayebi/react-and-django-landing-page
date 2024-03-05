@@ -265,8 +265,13 @@
     color: #808080;
   }
   .work-section-info {
+<<<<<<< HEAD
     min-width: 250px;
     min-height: 500px;
+=======
+    width: 290px;
+    min-height: 350px;
+>>>>>>> parent of e4a964a (140212141138)
     background-color: white;
     padding: 1rem 2rem;
     display: flex;
@@ -277,7 +282,10 @@
     border-radius: 1rem;
     color: #505050;
     margin: 1rem 2rem;
+<<<<<<< HEAD
     object-fit: cover;
+=======
+>>>>>>> parent of e4a964a (140212141138)
   }
   .work-section-info h2 {
     margin: 1rem 0rem;
