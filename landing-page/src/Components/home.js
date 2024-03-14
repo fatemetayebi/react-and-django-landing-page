@@ -13,14 +13,14 @@ const Home = () => {
           {/* <img src={BannerBackground} alt="" /> */}
         </div>
         <div className="home-text-section">
-          <h1 className="primary-heading">
+          <h1 className="primary-heading" id="Home-id">
             Choose Your Favorite Guitar 
           </h1>
           <p className="primary-text">
           Top-quality electric guitar for sale, perfect for rocking out and making music!
           </p>
           <button className="secondary-button">
-            Order Now <FiArrowRight />{" "}
+            Shop Now <FiArrowRight />{" "}
           </button>
         </div>
         <div className="home-image-section">

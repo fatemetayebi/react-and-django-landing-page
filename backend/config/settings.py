@@ -45,6 +45,8 @@ INSTALLED_APPS = [
     # Third Party Packages
     'rest_framework',
     'corsheaders',
+    'rest_framework_swagger',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [
@@ -97,6 +99,7 @@ DATABASES = {
     }
 }
 
+REST_FRAMEWORK = { 'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema' }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators
@@ -139,3 +142,13 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+KAVENEGAR_APIKEY = 'YOUR_APIKEY'
+
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'nuclearsystem2022@gmail.com'
+EMAIL_HOST_PASSWORD = 'vkvifcjmaffwaany '
+ACCOUNT_EMAIL_VERIFICATION = 'none'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False

@@ -21,8 +21,8 @@ const Product = () => {
         <p className="primary-subheading" id="Product-id"></p>
         <h1 className="primary-heading">Products</h1>
         <p className="primary-text">
-          Lorem ipsum dolor sit amet consectetur. Non tincidunt magna non et
-          elit. Dolor turpis molestie dui magnis facilisis at fringilla quam.
+        These electric guitar is a fantastic choice for any guitarist looking to elevate their playing experience.
+        Don't miss out on this opportunity to own a top-notch instrument!
         </p>
       </div>
       <div className="work-section-bottom">
