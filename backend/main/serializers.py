@@ -12,12 +12,10 @@ class ShowProductsSerializer(serializers.ModelSerializer):
 
 
 class ContactFormSerializer(serializers.ModelSerializer):
-    code = serializers.IntegerField(read_only=True)
-    # entered_code = serializers.IntegerField()
 
     class Meta:
         model = Contact
-        fields = ['code', 'email', 'subject', 'message']
+        fields = ['email', 'subject', 'message']
 
     # def validate(self, attrs):
     #     entered_code = int(attrs.get['entered_code'])
@@ -36,6 +34,9 @@ class ContactFormSerializer(serializers.ModelSerializer):
         return contact_form
 
 
+class CodeSerializer(serializers.Serializer):
+    code = serializers.IntegerField(required=False, read_only=True)
+    entered_code = serializers.IntegerField(required=False)
 # class ContactFormSerializer(serializers.ModelSerializer):
 #     entered_code = serializers.IntegerField()
 #

@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include, re_path
-from main.views import ShowLevelView, SaveContactForm
+from main.views import ShowProductView, SendCodeView, VerifyCodeView
 from django.conf import settings
 from django.conf.urls.static import static
 from rest_framework.routers import DefaultRouter
@@ -37,12 +37,13 @@ schema_view = get_schema_view(
 )
 
 router = routers.DefaultRouter()
-router.register(r'save_contact_form', SaveContactForm, basename='save_contact_form')
+router.register(r'save_contact_form', SendCodeView, basename='save_contact_form')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', ShowLevelView.as_view(), name='main'),
-    path('', include(router.urls)),
+    path('', ShowProductView.as_view(), name='main'),
+    path('getcode/', VerifyCodeView.as_view()),
+    path('sendcode/', SendCodeView.as_view()),
     path('docs/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
 ]
 
