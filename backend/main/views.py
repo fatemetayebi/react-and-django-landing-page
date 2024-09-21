@@ -28,13 +28,18 @@ class SendCodeView(APIView):
 
     # @action(detail=False, methods=['post'])
     def post(self, request):
-        data = json.dumps(request.POST)
-        data = json.loads(data)
-        # data = request.data
+        # data = json.dumps(request.POST)
+        # data = json.loads(data)
 
-        email = request.POST.get('email')
-        subject = request.POST.get('subject')
-        message = request.POST.get('message')
+        data = json.loads(request.body)
+        email = data.get('email')
+        subject = data.get('subject')
+        message = data.get('message')
+
+        # email = request.POST.get('email')
+        # subject = request.POST.get('subject')
+        # message = request.POST.get('message')
+
         request.session['email'] = email
         request.session['message'] = message
         request.session['subject'] = subject
@@ -45,6 +50,7 @@ class SendCodeView(APIView):
         }
 
         serializer = ContactFormSerializer(data=data)
+        print(data)
         if serializer.is_valid():
             send_mail(
                 'this is verify email from app',
@@ -65,10 +71,11 @@ class VerifyCodeView(APIView):
     # @action(detail=False, methods=['post'])
     def post(self, request):
         serializer = CodeSerializer(data=request.data)
+        print(f'{request.data}ffffffffffffffffffffffffffffffff')
         if serializer.is_valid():
             input_code = serializer.validated_data['entered_code']
 
-            if input_code == code:
+            if int(input_code) == int(code):
                 SendEmailView.create(request)
                 return Response({'success': True, 'message': 'your massage sent'}, status=status.HTTP_201_CREATED)
 
@@ -105,9 +112,16 @@ class SendEmailView(APIView):
         subject1 = request.session.get('subject')
         message = request.session.get('message')
         email = request.session.get('email')
-        contact = Contact(message=message, subject=subject1, email=email)
-        print(f'{contact.message}  ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg')
-        serializer = ContactFormSerializer(data=contact)
+        # contact = Contact(message=message, subject=subject1, email=email)
+
+        data = {
+            'email': email,
+            'subject': subject1,
+            'message': message
+        }
+        print(f'{data}  ggggggggggggggggggggggggggggggggggggggggggggggggggggggggggg')
+        serializer = ContactFormSerializer(data=data)
+        print(serializer)
         if serializer.is_valid():
             serializer.save()
 
@@ -117,6 +131,11 @@ class SendEmailView(APIView):
                       f'subject : {subject1}\n' \
                       f'message : {message}\n'
             email_from = settings.EMAIL_HOST_USER
-            recipient_list = ['fatitayyebi@gmail.com', 'nuclearsystem2022@gmail.com', ]
+            recipient_list = ['fatitayyebi@gmail.com', ]
             send_mail(subject, message, email_from, recipient_list)
             return HttpResponse('message sent')
+
+        else:
+            print('message didnt sendddddddddddddddddddddddddd')
+            return Response({'success': False, 'message': 'sending your message is failed'},
+                            status=status.HTTP_400_BAD_REQUEST)

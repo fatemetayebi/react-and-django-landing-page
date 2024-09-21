@@ -92,7 +92,7 @@
 
 
 import { motion } from 'framer-motion';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 
 
@@ -105,6 +105,7 @@ function Contact() {
 
   const [entered_code, setCode] = useState('');
 
+
   const handleSubmitEmail = (e) => {
     e.preventDefault();
     setShowNewInput(true);
@@ -114,8 +115,12 @@ function Contact() {
       subject: subject,
       message: message
     };
-
-    axios.post('http://127.0.0.1:8000/save_contact_form/send_email/', sendEmailData)
+    console.log(sendEmailData.data);
+    axios.post('http://127.0.0.1:8000/sendcode/', sendEmailData, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
       .then(response => {
         console.log(response.data);
         // Handle the response as needed
@@ -134,7 +139,11 @@ function Contact() {
       entered_code: entered_code
     };
 
-    axios.post('http://127.0.0.1:8000/save_contact_form/get_code/', sendCode)
+    axios.post('http://127.0.0.1:8000/getcode/', sendCode, {
+      headers: {
+        'Content-Type': 'application/json'
+      }
+    })
       .then(response => {
         console.log(response.data);
         // Handle the response as needed
@@ -149,24 +158,27 @@ function Contact() {
   return (
     <div className="contact-page-wrapper" id="Contact-id">
       <h1 className="primary-heading">Get In Touch With Us</h1>
-      
-      <motion.form onSubmit={handleSubmitEmail} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
-        {!showNewInput ? (
+
+      {!showNewInput ? (
+        <motion.form onSubmit={handleSubmitEmail} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
           <motion.div initial={{ x: -100, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.5 }}>
-            <input className="contact-form-container-email" type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-            <input className="contact-form-container-subject" type="text" placeholder="Subject" value={subject} onChange={(e) => setSubject(e.target.value)} required />
-            <textarea className="contact-form-container-message" placeholder="Message" value={message} onChange={(e) => setMessage(e.target.value)} required />
+            <input className="contact-form-container-email" name="email" type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+            <input className="contact-form-container-subject" name="subject" type="text" placeholder="Subject" value={subject} onChange={(e) => setSubject(e.target.value)} required />
+            <textarea className="contact-form-container-message" name="message" placeholder="Message" value={message} onChange={(e) => setMessage(e.target.value)} required />
             <motion.button className="secondary-button" type="submit">Send Email</motion.button>
           </motion.div>
-        ) : (
-          <motion.div onSubmit={handleSubmitCode} initial={{ x: 100, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.5 }}>
-            <input className="contact-form-container-subject" type="text" placeholder="enter code we sent to your email" value={entered_code} onChange={(e) => setCode(e.target.value)} required />
-            <motion.button className="secondary-button" type="submit">submit</motion.button>
+        </motion.form>
+      ) : (
+        <motion.form onSubmit={handleSubmitCode} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
+          <motion.div initial={{ x: 100, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.5 }}>
+            <input className="contact-form-container-subject" type="text" placeholder="Enter code we sent to your email" value={entered_code} onChange={(e) => setCode(e.target.value)} required />
+            <motion.button className="secondary-button" type="submit">Submit</motion.button>
           </motion.div>
-        )}
-      </motion.form>
+        </motion.form>
+      )}
     </div>
   );
-}
+};
+
 export default Contact;
 

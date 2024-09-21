@@ -24,14 +24,16 @@ class ContactFormSerializer(serializers.ModelSerializer):
     #         raise serializers.ValidationError({'code': 'entered code is wrong try again'})
     #     return attrs
 
-    def create(self, validated_data):
-        contact_form = Contact.objects.create(
-            email=validated_data['email'],
-            message=validated_data['message'],
-            subject=validated_data['subject'],
-        )
-        contact_form.save()
-        return contact_form
+    # def create(self, validated_data):
+    #     contact_form = Contact.objects.create(
+    #         email=validated_data['email'],
+    #         message=validated_data['message'],
+    #         subject=validated_data['subject'],
+    #     )
+    #     contact_form.save()
+    #     return contact_form
+
+
 
 
 class CodeSerializer(serializers.Serializer):
