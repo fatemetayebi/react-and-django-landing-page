@@ -54,10 +54,10 @@ Ensure both backend and frontend are running:
 ### Backend: http://127.0.0.1:8000/
 ### Frontend: http://localhost:3000
 ## How It Works
-Frontend (React): The SPA interacts with the Django backend using Axios to make API requests. The user can navigate between pages without full page reloads.
-Backend (Django): The backend API handles session management and user authentication, while also managing requests to send OTPs for email validation.
+##### Frontend (React): The SPA interacts with the Django backend using Axios to make API requests. The user can navigate between pages without full page reloads.
+##### Backend (Django): The backend API handles session management and user authentication, while also managing requests to send OTPs for email validation.
 Contact Form with OTP Validation: The user fills out a contact form. When they submit their email, an OTP is sent to the given email address. The user must input the OTP to validate the email before the form is successfully submitted.
-Contributing
+#### Contributing
 Contributions are welcome! Please fork the repository and submit a pull request with any suggested changes or improvements.
 
 
