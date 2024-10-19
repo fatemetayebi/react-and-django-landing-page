@@ -11,7 +11,6 @@ const About = () => {
           <img src={AboutBackground} alt="" />
         </div>
         <div className="about-section-image-container">
-          {/* <img src={AboutBackgroundImage} alt="" /> */}
         </div>
         <div className="about-section-text-container" id="About-id">
           <p className="primary-subheading" ></p>

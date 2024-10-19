@@ -12,15 +12,9 @@ import ListItemIcon from "@mui/material/ListItemIcon";
 import ListItemText from "@mui/material/ListItemText";
 import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
-import CommentRoundedIcon from "@mui/icons-material/CommentRounded";
 import PhoneRoundedIcon from "@mui/icons-material/PhoneRounded";
 import ShoppingCartRoundedIcon from "@mui/icons-material/ShoppingCartRounded";
-// import Home from "./Home"
-// import About from "./About";
-// import Work from "./Components/Work";
-// import Testimonial from "./Components/Testimonial";
-// import Contact from "./Components/Contact";
-// import Footer from "./Components/Footer";
+
 
 const Navbar = () => {
 
@@ -34,10 +28,6 @@ const Navbar = () => {
         {
           text: "About",
           icon: <InfoIcon />,
-        },
-        {
-          text: "Testimonials",
-          icon: <CommentRoundedIcon />,
         },
         {
           text: "Contact",
@@ -60,7 +50,6 @@ const Navbar = () => {
             <a href="Products.js#Product-id">
               <BsCart2 className="navbar-cart-icon" />
             </a>
-            {/* <button className="primary-button">Bookings Now</button> */}
           </div>
           <div className="navbar-menu-container">
             <HiOutlineBars3 onClick={() => setOpenMenu(true)} />
