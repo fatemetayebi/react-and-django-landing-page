@@ -25,5 +25,6 @@ class Contact(models.Model):
     name = models.TextField(null=True, blank=True)
 
     def __str__(self):
+        if self.email is None:
+            return "EMAIL IS NULL"
         return self.email
-

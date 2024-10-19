@@ -58,17 +58,31 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'corsheaders.middleware.CorsMiddleware',
-    'django.contrib.sessions.middleware.SessionMiddleware',
 ]
 
 
 # White listing the localhost:3000 port
-
+CORS_ALLOW_ALL_ORIGINS = True
+CORS_ALLOW_CREDENTIALS = True
+# SESSION_COOKIE_SAMESITE = 'None'
+# SESSION_COOKIE_SECURE = False
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:8000',
+    'http://localhost:3000',
+    'http://localhost:8080',
+]
 CORS_ORIGIN_WHITELIST = (
     'http://localhost:8000',
     'http://localhost:3000',
     'http://localhost:8080',
 )
+
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:8000',
+    'http://localhost:3000',
+    'http://localhost:8080',
+    'http://127.0.0.1:8000',
+]
 
 ROOT_URLCONF = 'config.urls'
 
@@ -101,7 +115,17 @@ DATABASES = {
     }
 }
 
-REST_FRAMEWORK = { 'DEFAULT_SCHEMA_CLASS': 'rest_framework.schemas.coreapi.AutoSchema' }
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny'
+    ],
+    'DEFAULT_AUTHENTICATION_CLASSES': [
+        'rest_framework.authentication.SessionAuthentication',
+    ],
+    'DEFAULT_SCHEMA_CLASS': ['rest_framework.schemas.coreapi.AutoSchema']
+}
+
+# SESSION_ENGINE = 'django.contrib.sessions.backends.db'
 
 # Password validation
 # https://docs.djangoproject.com/en/4.1/ref/settings/#auth-password-validators

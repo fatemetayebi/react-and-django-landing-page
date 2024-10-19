@@ -22,15 +22,39 @@
   
   body {
     background: linear-gradient(to left bottom, rgb(0, 0, 0) 11.4%, rgb(24, 24, 24) 70.2%);
-
   }
   
-  nav {
-    display: flex;
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 90px;
+}
+.secondary-button {
+  display: inline-block;
     align-items: center;
-    justify-content: space-between;
-    min-height: 90px;
-  }
+  justify-content: center;
+  padding: 1rem 2rem;
+  background-color: #693b6c;
+  outline: none;
+  border: none;
+  border-radius: 1rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  font-weight: 600;
+  color: white;
+  transition: 0.2s;
+  text-align: center;  
+}
+
+.secondary-button svg {
+    font-size: 1.5rem;
+}
+
+.secondary-button:hover {
+    background-color: #930893;
+}
   .navbar-menu-container {
     display: none;
   }
@@ -94,7 +118,7 @@
   .primary-heading {
     font-size: clamp(2rem, 5vw, 4rem);
     color: #fbfafb;
-    text-align: center;
+    text-align: center ;
     text-shadow: 0 0 20px #6800e6, 0 0 10px #fff, 0 0 15px #430137, 0 0 20px #430137, 0 0 25px #430137, 0 0 30px #430137, 0 0 35px #430137;
     /* line-height: 5rem; */
     max-width: 600px;
@@ -108,30 +132,6 @@
 
   }
   
-  .secondary-button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 1rem 2rem;
-    background-color: #d106df;
-    outline: none;
-    border: none;
-    border-radius: 1rem;
-    font-size: 1.1rem;
-    cursor: pointer;
-    font-weight: 600;
-    color: white;
-    transition: 0.2s;
-    text-align: center;  
-}
-
-.secondary-button svg {
-    font-size: 1.5rem;
-}
-
-.secondary-button:hover {
-    background-color: #930893;
-}
   .about-section-container {
     margin-top: 8rem;
     position: relative;
@@ -191,52 +191,54 @@
     max-width: 900px !important;
     display: inline-block;
   }
-  .contact-page-wrapper {
-    display: block;
-    align-items: center;
-    justify-content: center;
-    text-align: center !important;
+.contact-page-wrapper {
+  display: flexbox;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  flex-direction: column;
+  margin: 6rem 0rem;
+}
+
+.contact-form-container {
+    display: flex; 
     flex-direction: column;
-    margin: 6rem 0rem;
-  }
-  .contact-form-container {
-    flex-direction: column;
     align-items: center;
-  }
+}
   
   .contact-form-container-email, .contact-form-container-subject, .contact-form-container-message {
-    width: 100%;
-    max-width: 600px;
-    background-color: white;
-    margin: 1rem auto;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    width: 100% !important;
+    max-width: 600px !important;
+    background-color: white !important;
+    margin: 1rem auto !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
     text-align: center !important;
-    padding: 1rem;
-    border-radius: 0.8rem;
+    padding: 1rem !important;
+    border-radius: 0.8rem !important;
   }
   
   .contact-form-container-email {
-    max-width: 600px;
-    border: none;
-    outline: none;
-    font-size: 1.3rem;
+    max-width: 600px !important;
+    border: none !important;
+    outline: none !important;
+    font-size: 1.3rem !important;
   }
   
   .contact-form-container-subject {
-    max-width: 400px;
-    border: none;
-    outline: none;
-    font-size: 1.3rem;
+    max-width: 400px !important;
+    border: none !important;
+    outline: none !important;
+    font-size: 1.3rem !important;
   }
   
   .contact-form-container-message {
-    max-width: 800px;
-    height: 250px;
-    border: none;
-    outline: none;
-    font-size: 1.3rem;
+    max-width: 800px !important;
+    height: 250px !important;
+    border: none !important;
+    outline: none !important;
+    font-size: 1.3rem !important;
   }
 
   .fade-enter {
@@ -380,7 +382,7 @@
     }
     .primary-heading {
       color: #fbfafb;
-      text-align: center;
+      text-align: center !important;
       text-shadow: 0 0 20px #6800e6, 0 0 10px #fff, 0 0 15px #430137, 0 0 20px #430137, 0 0 25px #430137, 0 0 30px #430137, 0 0 35px #430137;
       max-width: 90%;
     }
