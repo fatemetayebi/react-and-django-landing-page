@@ -68,16 +68,16 @@ function Contact() {
 
       .then(response => {
         console.log(response.data);
-        setErrorMessage('YOUR    MESSAGE    SENT');
+        setErrorMessage('YOUR MESSAGE SENT');
       })
       .catch(error => {
 
         console.error(error);
 
         if (error.response && error.response.status === 400) {
-          setErrorMessage('Entered   code   is   wrong');
+          setErrorMessage('Entered code is wrong');
         } else {
-          setErrorMessage('An   error   occurred');
+          setErrorMessage('An error occurred');
         }
 
       });
@@ -96,27 +96,26 @@ function Contact() {
    
     <div className="contact-page-wrapper" id="Contact-id">
       <h1 className="primary-heading">Get In Touch With Us</h1>
-      {!errorMessage ? (
-        !showNewInput ? (
-          <motion.form onSubmit={handleSubmitEmail} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
-            <motion.div initial={{ x: -100, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.5 }}>
-              <input className="contact-form-container-email" name="email" type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
-              <input className="contact-form-container-subject" name="subject" type="text" placeholder="Subject" value={subject} onChange={(e) => setSubject(e.target.value)} required />
-              <textarea className="contact-form-container-message" name="message" placeholder="Message" value={message} onChange={(e) => setMessage(e.target.value)} required />
-              <motion.button className="secondary-button" type="submit">Send Email</motion.button>
-            </motion.div>
-          </motion.form>
-        ) : (
-          <motion.form onSubmit={handleSubmitCode} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
-            <motion.div initial={{ x: 100, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.5 }}>
-              <input className="contact-form-container-subject" type="text" placeholder="Enter code we sent to your email" value={entered_code} onChange={(e) => setCode(e.target.value)} required />
-              <motion.button className="secondary-button" type="submit">Submit</motion.button>
-            </motion.div>
-          </motion.form>
-          )
-        ) : (
-          <p style={{ color: 'white', marginTop: '20px' }}>{errorMessage}</p>
-        )}
+
+      {!showNewInput ? (
+        <motion.form onSubmit={handleSubmitEmail} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
+          <motion.div initial={{ x: -100, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.5 }}>
+            <input className="contact-form-container-email" name="email" type="email" placeholder="Email" value={email} onChange={(e) => setEmail(e.target.value)} required />
+            <input className="contact-form-container-subject" name="subject" type="text" placeholder="Subject" value={subject} onChange={(e) => setSubject(e.target.value)} required />
+            <textarea className="contact-form-container-message" name="message" placeholder="Message" value={message} onChange={(e) => setMessage(e.target.value)} required />
+            <motion.button className="secondary-button" type="submit">Send Email</motion.button>
+          </motion.div>
+        </motion.form>
+      ) : (
+        <motion.form onSubmit={handleSubmitCode} initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.5 }}>
+          <motion.div initial={{ x: 100, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 0.5 }}>
+            <input className="contact-form-container-subject" type="text" placeholder="Enter code we sent to your email" value={entered_code} onChange={(e) => setCode(e.target.value)} required />
+            <motion.button className="secondary-button" type="submit">Submit</motion.button>
+          </motion.div>
+        </motion.form>
+      )}
+      <br/>
+      {errorMessage && <p style={{ color: 'white' }}>{errorMessage}</p>}
     </div>
   );
 };

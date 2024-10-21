@@ -1,8 +1,5 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import WheelPicker from 'react-simple-wheel-picker';
 
 const Product = () => {
   const [products, setProducts] = useState([]);
@@ -17,36 +14,7 @@ const Product = () => {
         console.error(error);
       });
   }, []);
-=======
-=======
->>>>>>> parent of e4a964a (140212141138)
-import React from "react";
-import PickMeals from "../Assets/pick-meals-image.png";
-import ChooseMeals from "../Assets/choose-image.png";
-import DeliveryMeals from "../Assets/delivery-image.png";
-<<<<<<< HEAD
->>>>>>> parent of e4a964a (140212141138)
-=======
->>>>>>> parent of e4a964a (140212141138)
 
-const Work = () => {
-  const workInfoData = [
-    {
-      image: PickMeals,
-      title: "Pick Meals",
-      text: "Lorem ipsum dolor sit amet consectetur. Maecenas orci et sagittis duis elementum interdum facilisi bibendum.",
-    },
-    {
-      image: ChooseMeals,
-      title: "Choose How Often",
-      text: "Lorem ipsum dolor sit amet consectetur. Maecenas orci et ",
-    },
-    {
-      image: DeliveryMeals,
-      title: "Fast Deliveries",
-      text: "Lorem ipsum dolor sit amet consectetur. Maecenas orci et lorem ipsum",
-    },
-  ];
   return (
     <div className="work-section-wrapper">
       <div className="work-section-top">
@@ -57,34 +25,19 @@ const Work = () => {
         Don't miss out on this opportunity to own a top-notch instrument!
         </p>
       </div>
-<<<<<<< HEAD
-      <div className='work-section-products'>
-        <WheelPicker style={{ width: 200, height: 150 }}>
-          {products.map((data) => (
-            <div className="work-section-info" key={data.intro}>
-              <div className="product-boxes-img-container">
-                <img src={data.image} alt="" />
-              </div>
-              <p>{data.title}</p>
-              <p>{data.price}$</p>
-            </div>
-          ))}
-        </WheelPicker>
-=======
       <div className="work-section-bottom">
-        {workInfoData.map((data) => (
-          <div className="work-section-info" key={data.title}>
+        {products.map((data) => (
+          <div className="work-section-info" key={data.intro}>
             <div className="info-boxes-img-container">
               <img src={data.image} alt="" />
             </div>
-            <h2>{data.title}</h2>
-            <p>{data.text}</p>
+            <p>{data.title}</p>
+            <p>{data.price}$</p>
           </div>
         ))}
->>>>>>> parent of e4a964a (140212141138)
       </div>
     </div>
   );
 };
 
-export default Work;
+export default Product;
