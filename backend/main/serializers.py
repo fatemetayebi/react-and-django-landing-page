@@ -8,9 +8,9 @@ class ShowProductsSerializer(serializers.ModelSerializer):
         model = Product
         fields = '__all__'
 
+
 # Serializer for handling the contact form data, excludes no fields (all fields included)
 class ContactFormSerializer(serializers.ModelSerializer):
-
     class Meta:
         model = Contact
         exclude = ()
